@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #	Author: 	Andrew Thomson
 #	Date: 		3/19/2014
@@ -16,7 +16,7 @@
 #	the desktop copy. Failure to do so could lead to a corrupt package file. Use at your own risk. 
 
 #	declare root of file search
-searchPath="/var/folders/"
+searchPath="/private/var/folders"
 
 #	set found to false to start
 found=false
@@ -24,7 +24,7 @@ found=false
 #	loop thru looking for app store packages until one is found
 until $found; do
 	#	get list of package files
-	packageList=$(find $searchPath -name "mzp*.pkg" 2> /dev/null)
+	packageList=$(find $searchPath -name "*.pkg" 2> /dev/null)
 
 	#	link any found package files to desktop folder
 	if [ ! -z $packageList ]; then
